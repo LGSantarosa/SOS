@@ -27,7 +27,3 @@ API/servico em Python.
    ```bash
    python3 main.py
    ```
-
-## HTTPS local
-
-Use `mkcert` para gerar certificado local confiavel. Instrucoes em `certs/README.md`.
