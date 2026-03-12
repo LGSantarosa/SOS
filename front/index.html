@@ -4,9 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SOS</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>SOS</h1>
+  <div class="container">
+    <header class="topo">
+      <img src="images/logo.jpeg" alt="Logo SOS" class="logo">
+      <h1>Serviço de Chamados</h1>
+      <p>Abra um chamado de forma rápida e simples.</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Novo chamado</h2>
+        <form>
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+
+          <label for="setor">Setor</label>
+          <input type="text" id="setor" name="setor" placeholder="Ex: Financeiro" required>
+
+          <label for="problema">Descrição</label>
+          <textarea id="problema" name="problema" rows="4" placeholder="Descreva o problema" required></textarea>
+
+          <button type="submit">Enviar chamado</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Últimos chamados</h2>
+        <ul class="lista-chamados">
+          <li>
+            <strong>#1024</strong>
+            <span>Computador sem acesso à internet</span>
+            <small>TI - Em andamento</small>
+          </li>
+          <li>
+            <strong>#1023</strong>
+            <span>Erro ao imprimir relatório</span>
+            <small>Administração - Aberto</small>
+          </li>
+          <li>
+            <strong>#1022</strong>
+            <span>Senha expirada no sistema</span>
+            <small>RH - Concluído</small>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
   <script src="js/app.js"></script>
 </body>
 </html>
