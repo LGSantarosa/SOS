@@ -7,6 +7,18 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <nav class="navbar">
+    <div class="navbar-conteudo">
+      <a href="#" class="brand">SOS</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" type="button">☰</button>
+      <ul class="menu" id="menu">
+        <li><a href="#">Chamados</a></li>
+        <li><a href="#">Setores</a></li>
+        <li><a href="#">Conta</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <div class="container">
     <header class="topo">
       <img src="images/logo.jpeg" alt="Logo SOS" class="logo">
@@ -18,6 +30,9 @@
       <section class="card">
         <h2>Novo chamado</h2>
         <form>
+          <label for="usuario">Usuário</label>
+          <input type="text" id="usuario" name="usuario" placeholder="Seu usuário" required>
+
           <label for="nome">Nome</label>
           <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
 
@@ -25,7 +40,7 @@
           <input type="text" id="setor" name="setor" placeholder="Ex: Financeiro" required>
 
           <label for="problema">Descrição</label>
-          <textarea id="problema" name="problema" rows="4" placeholder="Descreva o problema" required></textarea>
+          <textarea id="problema" name="problema" rows="4" maxlength="500" placeholder="Descreva o problema" required></textarea>
 
           <button type="submit">Enviar chamado</button>
         </form>

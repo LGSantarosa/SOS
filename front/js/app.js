@@ -1,4 +1,10 @@
-// SOS - Frontend
 document.addEventListener('DOMContentLoaded', function () {
-  console.log('SOS frontend loaded');
+  var menuBtn = document.getElementById('menuBtn');
+  var menu = document.getElementById('menu');
+
+  if (menuBtn && menu) {
+    menuBtn.addEventListener('click', function () {
+      menu.classList.toggle('aberto');
+    });
+  }
 });
