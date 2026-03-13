@@ -3,71 +3,229 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SOS</title>
+  <title>SOS — Serviço de Chamados</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=JetBrains+Mono:wght@400;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="navbar-conteudo">
-      <a href="#" class="brand">SOS</a>
-      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" type="button">☰</button>
-      <ul class="menu" id="menu">
-        <li><a href="#">Chamados</a></li>
-        <li><a href="#">Setores</a></li>
-        <li><a href="#">Conta</a></li>
-      </ul>
+
+  <!-- NAVBAR -->
+  <nav class="sos-navbar navbar navbar-expand-md fixed-top">
+    <div class="container-xl">
+      <a class="navbar-brand sos-brand" href="#">
+        <span class="brand-badge">SOS</span>
+      </a>
+
+      <button class="navbar-toggler sos-toggler border-0" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navMenu"
+              aria-label="Abrir menu">
+        <i class="bi bi-list"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-md-1 pt-3 pt-md-0">
+          <li class="nav-item">
+            <a class="nav-link sos-nav-link" href="#">
+              <i class="bi bi-ticket-perforated me-1"></i>Chamados
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link sos-nav-link" href="#">
+              <i class="bi bi-diagram-3 me-1"></i>Setores
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link sos-nav-link" href="#">
+              <i class="bi bi-person-circle me-1"></i>Conta
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 
-  <div class="container">
-    <header class="topo">
-      <img src="images/logo.jpeg" alt="Logo SOS" class="logo">
-      <h1>Serviço de Chamados</h1>
-      <p>Abra um chamado de forma rápida e simples.</p>
-    </header>
+  <!-- HERO -->
+  <section class="sos-hero">
+    <div class="container-xl">
+      <div class="hero-inner text-center">
 
-    <main>
-      <section class="card">
-        <h2>Novo chamado</h2>
-        <form>
-          <label for="usuario">Usuário</label>
-          <input type="text" id="usuario" name="usuario" placeholder="Seu usuário" required>
+        <img src="images/logo.jpeg" alt="Logo SOS" class="sos-logo mb-4">
 
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+        <div class="hero-eyebrow mb-2">Sistema Operacional de Suporte</div>
 
-          <label for="setor">Setor</label>
-          <input type="text" id="setor" name="setor" placeholder="Ex: Financeiro" required>
+        <h1 class="hero-title mb-3">
+          Serviço de <span class="hero-accent">Chamados</span>
+        </h1>
 
-          <label for="problema">Descrição</label>
-          <textarea id="problema" name="problema" rows="4" maxlength="500" placeholder="Descreva o problema" required></textarea>
+        <p class="hero-sub mb-4">
+          Registre, acompanhe e resolva ocorrências de forma rápida e eficiente.
+        </p>
 
-          <button type="submit">Enviar chamado</button>
-        </form>
-      </section>
+        <div class="hero-stats d-flex justify-content-center flex-wrap gap-3">
+          <div class="stat-pill">
+            <span class="stat-num">12</span>
+            <span class="stat-label">Abertos</span>
+          </div>
+          <div class="stat-pill stat-orange">
+            <span class="stat-num">5</span>
+            <span class="stat-label">Andamento</span>
+          </div>
+          <div class="stat-pill stat-black">
+            <span class="stat-num">47</span>
+            <span class="stat-label">Resolvidos</span>
+          </div>
+        </div>
 
-      <section class="card">
-        <h2>Últimos chamados</h2>
-        <ul class="lista-chamados">
-          <li>
-            <strong>#1024</strong>
-            <span>Computador sem acesso à internet</span>
-            <small>TI - Em andamento</small>
-          </li>
-          <li>
-            <strong>#1023</strong>
-            <span>Erro ao imprimir relatório</span>
-            <small>Administração - Aberto</small>
-          </li>
-          <li>
-            <strong>#1022</strong>
-            <span>Senha expirada no sistema</span>
-            <small>RH - Concluído</small>
-          </li>
-        </ul>
-      </section>
-    </main>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <section class="sos-main py-5">
+    <div class="container-xl">
+      <div class="row g-4 align-items-start">
+
+        <!-- Formulário -->
+        <div class="col-12 col-lg-6">
+          <div class="sos-card fade-in" style="animation-delay:.1s">
+            <div class="card-header-sos mb-4">
+              <div class="card-icon">
+                <i class="bi bi-plus-circle-fill"></i>
+              </div>
+              <div>
+                <h2 class="card-title-sos">Novo Chamado</h2>
+                <p class="card-sub-sos">Preencha os dados para abrir sua solicitação</p>
+              </div>
+            </div>
+
+            <form id="formChamado" novalidate>
+              <div class="mb-3">
+                <label for="usuario" class="sos-label">
+                  <i class="bi bi-at"></i> Usuário
+                </label>
+                <input type="text" id="usuario" name="usuario"
+                       class="sos-input" placeholder="seu.usuario" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="nome" class="sos-label">
+                  <i class="bi bi-person"></i> Nome
+                </label>
+                <input type="text" id="nome" name="nome"
+                       class="sos-input" placeholder="Seu nome completo" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="setor" class="sos-label">
+                  <i class="bi bi-building"></i> Setor
+                </label>
+                <input type="text" id="setor" name="setor"
+                       class="sos-input" placeholder="Ex: Financeiro, RH, TI..." required>
+              </div>
+
+              <div class="mb-4">
+                <label for="problema" class="sos-label">
+                  <i class="bi bi-chat-square-text"></i> Descrição do Problema
+                </label>
+                <textarea id="problema" name="problema"
+                          class="sos-input" rows="4" maxlength="500"
+                          placeholder="Descreva detalhadamente o problema..." required></textarea>
+                <div class="char-counter text-end mt-1">
+                  <span id="charCount">0</span>/500
+                </div>
+              </div>
+
+              <button type="submit" class="sos-btn w-100">
+                <i class="bi bi-send-fill me-2"></i>Enviar Chamado
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Chamados recentes -->
+        <div class="col-12 col-lg-6">
+          <div class="sos-card fade-in" style="animation-delay:.2s">
+            <div class="card-header-sos mb-4">
+              <div class="card-icon card-icon-dark">
+                <i class="bi bi-clock-history"></i>
+              </div>
+              <div>
+                <h2 class="card-title-sos">Últimos Chamados</h2>
+                <p class="card-sub-sos">Acompanhe o status dos chamados recentes</p>
+              </div>
+            </div>
+
+            <ul class="sos-ticket-list">
+              <li class="sos-ticket fade-in" style="animation-delay:.3s">
+                <div class="ticket-header">
+                  <span class="ticket-id">#1024</span>
+                  <span class="ticket-badge badge-andamento">Em andamento</span>
+                </div>
+                <p class="ticket-desc">Computador sem acesso à internet</p>
+                <div class="ticket-footer">
+                  <span><i class="bi bi-diagram-3"></i> TI</span>
+                  <span><i class="bi bi-clock"></i> há 2h</span>
+                </div>
+              </li>
+
+              <li class="sos-ticket fade-in" style="animation-delay:.4s">
+                <div class="ticket-header">
+                  <span class="ticket-id">#1023</span>
+                  <span class="ticket-badge badge-aberto">Aberto</span>
+                </div>
+                <p class="ticket-desc">Erro ao imprimir relatório</p>
+                <div class="ticket-footer">
+                  <span><i class="bi bi-diagram-3"></i> Administração</span>
+                  <span><i class="bi bi-clock"></i> há 4h</span>
+                </div>
+              </li>
+
+              <li class="sos-ticket fade-in" style="animation-delay:.5s">
+                <div class="ticket-header">
+                  <span class="ticket-id">#1022</span>
+                  <span class="ticket-badge badge-concluido">Concluído</span>
+                </div>
+                <p class="ticket-desc">Senha expirada no sistema</p>
+                <div class="ticket-footer">
+                  <span><i class="bi bi-diagram-3"></i> RH</span>
+                  <span><i class="bi bi-clock"></i> ontem</span>
+                </div>
+              </li>
+            </ul>
+
+            <a href="#" class="sos-link-all d-block text-center mt-4">
+              Ver todos os chamados <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TOAST -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="successToast" class="toast sos-toast align-items-center border-0"
+         role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">
+          <i class="bi bi-check-circle-fill me-2"></i>
+          Chamado enviado com sucesso! <strong>#1025</strong>
+        </div>
+        <button type="button" class="btn-close me-2 m-auto"
+                data-bs-dismiss="toast" aria-label="Fechar"></button>
+      </div>
+    </div>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
