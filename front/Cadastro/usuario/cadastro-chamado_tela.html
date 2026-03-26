@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS_Cadastro do Usuário</title>
+    <link rel="stylesheet" href="../../padrao_img-css-html/style-padrao.css">
+    <link rel="stylesheet" href="cadastro-chamado_style.css">
+</head>
+<body>
+  <header>
+
+    <img id="logo" src="../../padrao_img-css-html/sos-logo.png" alt="Imagem principal">
+    <h1>Sistema de Organização de Solicitações</h1>
+
+  </header>
+
+  <section class="form-section">
+    <h2>Nova Solicitação</h2>
+    <p>Nesta página você poderá criar uma nova solicitação de melhorias e ajustes nos sistemas.</p>
+    <p>Lembre-se de <strong>salvar o Código de Solicitação</strong> para que na página Status de Aprovação
+    você possa buscá-lo e verificar qual é o andamento do seu pedido.</p>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Código de Solicitação</label>
+        <input type="text" id="codigoSolicitacao" readonly>
+      </div>
+      <div class="form-group">
+        <label>Data da Solicitação</label>
+        <input type="date" id="dataSolicitacao" required readonly>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    
+    <section class="form-section">
+      <h2>Dados do Solicitante</h2>
+
+      <div class="form-group">
+        <label >Nome Completo<span class="required">*</span></label>
+        <input type="text" id="nomeCompleto" placeholder="Escreva seu nome completo">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="departamento">Departamento:</label>
+          <input type="text" id="departamento" name="departamento" required>
+
+          <label for="matricula">Matrícula:</label>
+          <input type="text" id="matricula" name="matricula" required>
+        </div>
+        
+        <div class="form-group">
+            <label >Telefone / Celular com DDD<span class="required">*</span></label>
+            <input type="tel" id="telefone" placeholder="(41) 99999-9999" required>
+          </div>
+      </div>
+
+      <div id="outro-setor-container" style="display:none; margin-top:10px;">
+            <label for="outroSetor">Escreva (EM MAIÚSCULO) a Sigla do Setor <span class="required">*</span></label>
+            <input type="text" id="outroSetor" name="outroSetor" placeholder="AAA/AAA/AAA">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label >E-mail<span class="required">*</span></label>
+          <input type="email" id="email" placeholder="Escreva seu e-mail mais usado" required>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="form-section">
+      <h2>Detalhes da Solicitação</h2>
+      <form id="solicitacaoForm">
+        <div class="form-row">
+          
+          <div class="form-group">
+            <label for="categoria">Categoria<span class="required">*</span></label>
+            <select id="categoria" name="categoria" required>
+              <option value = "0">---Selecione---</option>
+              <option>-- banco de dados: agendamento de backup do BD</option>
+              <option>-- banco de dados: agendamento de reunião técnica</option>
+              <option>-- banco de dados: agendamento de script</option>
+              <option>-- banco de dados: ajustes para ganho de performance</option>
+              <option>-- banco de dados: análise de query / plano de execução</option>
+              <option>-- banco de dados: atualização do BD</option>
+              <option>-- banco de dados: automação de rotinas administrativas (backup, integridade, estatísticas)</option>
+              <option>-- banco de dados: desenvolvimento</option>
+              <option>-- banco de dados: configuração / ajuste na política de backup</option>
+              <option>-- banco de dados: criação de database</option>
+              <option>-- banco de dados: criação de job / agendamento de tarefas</option>
+              <option>-- banco de dados: criação de login / concessão e revogação de privilégios</option>
+              <option>-- banco de dados: CSLOG - agendamento / execução de scripts</option>
+              <option>-- banco de dados: execução de script agendado com acompanhamento</option>
+              <option>-- banco de dados: execução imediata de script</option>
+              <option>-- banco de dados: implementação de auditoria ou criptografia</option>
+              <option>-- banco de dados: instalação de novo banco de dados</option>
+              <option>-- banco de dados: provisionamento de recursos / ajustes de parametrizações</option>
+              <option>-- banco de dados: recuperação de banco de dados</option>
+              <option>-- banco de dados: reorganização de tabelas / índices</option>
+              <option>-- banco de dados: reset de senha BD</option>
+              <option>-- banco de dados: solicitação de criação de rotina de expurgo de dados</option>
+              <option>-- banco de dados: solicitação de relatórios técnicos</option>
+              <option>-- banco de dados: solicitação de restore parcial ou total</option>
+              <option>-- banco de dados: troubleshooting de processos</option>
+              <option>-- banco de dados: verificação de serviço de replicação</option>
+              <option>-- facilities: cadeira quebrada</option>
+              <option>-- facilities: problemas com linha/rede/internet</option>
+              <option>-- facilities: descarte de máquinas</option>
+              <option>-- facilities: headphone</option>
+              <option>-- facilities: manutenção de ar condicionado</option>
+              <option>-- facilities: manutenção de cadeiras</option>
+              <option>-- facilities: manutenção de headset</option>
+              <option>-- facilities: material de escritório</option>
+              <option>-- facilities: solicitar novo computador</option>
+              <option>-- facilities: troca de monitor</option>
+              <option>-- gestão de péssoal: entrega de EPI</option>
+              <option>-- gestão de péssoal: abertura de vagas</option>
+              <option>-- gestão de péssoal: admissões</option>
+              <option>-- gestão de péssoal: advertências e suspensões</option>
+              <option>-- gestão de péssoal: afastamento (atestado superior a 15 dias)</option>
+              <option>-- gestão de péssoal: análise de desligamento</option>
+              <option>-- gestão de péssoal: atestado médico / justificativas</option>
+              <option>-- gestão de péssoal: cartão convênio</option>
+              <option>criação/alteração de acesso a sistemas</option>
+              <option>-- gestão de péssoal: descontos em folha de pagamento</option>
+              <option>-- gestão de péssoal: dúvidas de pagamento</option>
+              <option>-- gestão de péssoal: férias / fracionamento de férias</option>
+              <option>-- gestão de péssoal: novo cordão avulso</option>
+              <option>-- gestão de péssoal: plano de saúde</option>
+              <option>-- gestão de péssoal: plano odontológico</option>
+              <option>-- gestão de péssoal: ponto - ajuste de banco de horas</option>
+              <option>-- gestão de péssoal: ponto - solicitar extrato de banco de horas</option>
+              <option>-- gestão de péssoal: processo de promoção ou aumento salarial</option>
+              <option>-- gestão de péssoal: recisões</option>
+              <option>-- gestão de péssoal: solicitação de crachá</option>
+              <option>-- gestão de péssoal: vale transporte / vale refeição</option>
+              <option>-- infra: acesso à pasta de rede</option>
+              <option>-- infra: instalação</option>
+              <option>-- infra: backups - conferir</option>
+              <option>-- infra: backup - configurar dispositivo / sistema</option>
+              <option>-- infra: backup - programar</option>
+              <option>-- infra: backup - restaurar dados</option>
+              <option>-- infra: backup teste de restauração de dados</option>
+              <option>-- infra: cadastramento de usuários - criar / alterar</option>
+              <option>-- infra: DNS</option>
+              <option>-- infra: firewall</option>
+              <option>-- infra: lentidão em sistemas</option>
+              <option>-- infra: rede - alteração de VLAN</option>
+              <option>-- infra: rede - ativação de ponto de rede</option>
+              <option>-- infra: rede - instalar switch em rede</option>
+              <option>-- infra: rede - roteamento</option>
+              <option>-- infra: servidores - ativação de novo servidor</option>
+              <option>-- infra: servidores - ativação de novo servidor virtual</option>
+              <option>-- infra: servidores - manutenção</option>
+              <option>-- infra: servidores - monitoramento</option>
+              <option>-- infra: servidores - servidor parado</option>
+              <option>-- infra: tratamento de vulnerabilidade</option>
+              <option>-- infra: vmware - criar VM</option>
+              <option>-- infra: vmware - upgrade</option>
+              <option>-- infra: vmware - vmtools</option>
+              <option>-- LGPD: confirmação de tratamento</option>
+              <option>-- LGPD: eliminação</option>
+              <option>-- LGPD: informação de dados tratados</option>
+              <option>-- LGPD: informação de compartilhamento</option>
+              <option>-- LGPD: outros</option>
+              <option>-- LGPD: portabilidade</option>
+              <option>-- LGPD: retificação de dados</option>
+              <option>-- LGPD: revogação do consentimento</option>
+              <option>-- reservas: refeitório</option>
+              <option>-- reservas: sala de reunião</option>
+              <option>-- reservas: sala gourmet</option>
+              <option>-- segurança da informação: acessos e identidade - criação / alteração</option>
+              <option>-- segurança da informação: acessos e identidade - solicitação de acesso a sites externos</option>
+              <option>-- segurança da informação: acessos e identidade - solicitação de acesso a terceiros</option>
+              <option>-- segurança da informação: avaliação de segurança em softwares</option>
+              <option>-- segurança da informação: controles de segurança - criação / alteração de GPO</option>
+              <option>-- segurança da informação: controles de segurança - criação / alteração de regra em DLP</option>
+              <option>-- segurança da informação: controles de segurança - criação / alteração de regras em firewall</option>
+              <option>-- segurança da informação: controles de segurança - criação / alteração de envio / recebimento de e-mail</option>
+              <option>-- segurança da informação: controles de segurança - criação / alteração de túnel IPSec</option>
+              <option>-- segurança da informação: controles de segurança - liberação de nova organização no teams</option>
+              <option>-- segurança da informação: controles de segurança - teste de segurança em aplicação</option>
+              <option>-- segurança da informação: controles de segurança - fale conosco</option>
+              <option>-- segurança da informação: governança de SI - auditoria</option>
+              <option>-- segurança da informação: governança de SI - avaliação de segurança de fornecedores</option>
+              <option>-- segurança da informação: governança de SI - criação / alteração de política / procedimento</option>
+              <option>-- segurança da informação: governança de SI - demandas contratante</option>
+              <option>-- segurança da informação: governança de SI - orientações sobre políticas</option>
+              <option>-- suporte: acessos - a sistemas de terceiros</option>
+              <option>-- suporte: acessos - administrador local (máquina)</option>
+              <option>-- suporte: acessos - alteração de senha</option>
+              <option>-- suporte: acessos - bloquear acesso de colaborador</option>
+              <option>-- suporte: acessos - bloquear acesso de colaborador desligado</option>
+              <option>-- suporte: acessos - cancelar acesso específico (e-mail, teams)</option>
+              <option>-- suporte: acessos - derrubar webfilter</option>
+              <option>-- suporte: acessos - habilitar / revogar MFA (autenticação multifator)</option>
+              <option>-- suporte: acessos - liberação de visitante a wifi</option>
+              <option>-- suporte: agendamento - auditoria</option>
+              <option>-- suporte: agendamento - suporte para visitantes (reuniões, videoconferências)</option>
+              <option>-- suporte: e-mail - caixa de e-mail sem espaço</option>
+              <option>-- suporte: e-mail - configurar e-mail</option>
+              <option>-- suporte: e-mail - configurar resposta automática</option>
+              <option>-- suporte: e-mail - desbloqueio de e-mail</option>
+              <option>-- suporte: e-mail - não envia ou não recebe e-mail</option>
+              <option>-- suporte: e-mail - rastreamento de e-mail</option>
+              <option>-- suporte: estação de trabalho - análise de computadores</option>
+              <option>-- suporte: estação de trabalho - análise de notebooks</option>
+              <option>-- suporte: estação de trabalho - formatação / backup de máquinas</option>
+              <option>-- suporte: estação de trabalho - habilitar armazenamento externo / usb</option>
+              <option>-- suporte: estação de trabalho - habilitar bluetooth</option>
+              <option>-- suporte: estação de trabalho - habilitar microsot store</option>
+              <option>-- suporte: estação de trabalho - habilitar wifi</option>
+              <option>-- suporte: estação de trabalho - lentidão de acesso</option>
+              <option>-- suporte: estação de trabalho - manutenção preventiva</option>
+              <option>-- suporte: estação de trabalho - máquina lenta ou instável</option>
+              <option>-- suporte: estação de trabalho - ponte de rede instável ou defeituoso</option>
+              <option>-- suporte: estação de trabalho - preparação de máquinas</option>
+              <option>-- suporte: estação de trabalho - problema de áudio</option>
+              <option>-- suporte: impressoras / scanner - instalar / configurar</option>
+              <option>-- suporte: insumos</option>
+              <option>-- suporte: softwares - aquisição de planos Microsoft (Office, Teams, Power BI)</option>
+              <option>-- suporte: softwares - instalação de aplicativos</option>
+              <option>-- suporte: softwares - instalação / configuração de extensão de navegador</option>
+              <option>-- suporte: softwares - instalação / configuração de software PDF</option>
+              <option>-- suporte: softwares - instalação / configuração de token</option>
+              <option>-- suporte: softwares - instalação / configuração de VPN</option>
+
+            </select>
+            <div id="outro-categoria-container" style="display:none; margin-top:10px;">
+                <label for="outraCategoria">Descreva em poucas palavras<span class="required">*</span></label>
+                <input type="text" id="outraCategoria" name="outraCategoria" placeholder="Categoria">
+            </div>
+          </div>
+        
+
+          <div class="form-group">
+            <label >Prioridade<span class="required">*</span></label>
+            <select id="prioridade" required>
+              <option value = "0">---Selecione---</option>
+              <option value = "1">Urgente</option>
+              <option value = "2">Alta</option>
+              <option value = "3">Média</option>
+              <option value = "4">Baixa</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Título<span class="required">*</span></label>
+            <input type="text" id="titulo" placeholder="Escreva o título em poucas palavras" required>
+            <label >Descrição do Problema<span class="required">*</span></label>
+            <textarea id="descricaoProblema" placeholder="Descreva sua solicitação e anexe abaixo imagens, pdfs etc com o problema" rows="3" required></textarea>
+            <label >Anexe a Tela com o Problema (Opcional)</label>
+            <input type="file" id="anexos" name="Arquivo Problema">
+            <label >Sugestão de possível Solução (Como poderia ou deveria aparecer na tela) (Opcional)</label>
+            <textarea id="sugestaoSolucao" placeholder="Descreva sua solicitação e anexe abaixo imagens, pdfs etc com a sugestão de possível solução" rows="3"></textarea>
+            <label>Anexe a tela destacando uma sugestão de possível solução (Como poderia ou deveria aparecer na tela) (Opcional)</label>
+            <input type="file" name="Arquivo Solução">
+          </div>         
+        </div>
+        <button type="submit">Enviar Solicitação</button>
+      </form>
+    </section>
+
+
+  </div>
+
+  <script src="cadastro-chamado_script.js"></script>
+</body>
+</html>

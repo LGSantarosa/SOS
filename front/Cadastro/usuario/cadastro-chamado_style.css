@@ -1,0 +1,65 @@
+.form-section {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  padding: 15px;
+  margin-bottom: 15px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  justify-self: center;
+}
+
+
+.form-row {
+  display: flex;
+  justify-content: space-between; 
+  gap: 40px; 
+  margin-bottom: 10px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-section select,
+.form-section textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #fafafa;
+  transition: border 0.2s;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin-bottom: 10px;
+}
+
+.form-section input[type="file"]::file-selector-button {
+  background: #1d8322;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.form-section input[type="file"]::file-selector-button:hover {
+  background: #10584b;
+  color: #33e73c;
+}
+
+.required {
+    color: red;
+    margin-left: 2px;
+  }
