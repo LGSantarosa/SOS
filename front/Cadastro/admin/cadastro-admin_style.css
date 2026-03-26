@@ -5,6 +5,9 @@
   font-weight: bold;
 }
 
+.container-read {
+  overflow-y: auto;
+}
 
 .resultado {
   background: #fff;
@@ -17,11 +20,12 @@
   overflow-y: auto;    /* barra vertical quando precisar */
   overflow-x: auto;    /* barra horizontal quando precisar */
   border: 1px solid #ccc; /* opcional (só pra visualizar melhor) */
+
 }
 
 .resultado table {
-  border-collapse: collapse;
-  min-width: 800px; /* força largura mínima */
+  display: block;       /* permite scroll */
+  overflow-x: auto;     /* scroll horizontal */
 }
 
 .resultado th,

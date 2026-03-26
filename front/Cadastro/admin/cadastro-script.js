@@ -52,9 +52,14 @@ function loadLocalUsers() {
 
 // 3.4) Gera um novo ID local sequencial (robusto mesmo se apagarmos itens)
 function generateLocalId() {
-  const ids = localUsers.map(u => Number(u.id)).filter(Number.isFinite);
-  const maxId = ids.length ? Math.max(...ids) : 0;
+  if (localUsers.length === 0) return 1;
+
+  const maxId = Math.max(...localUsers.map(u => Number(u.id)));
   return maxId + 1;
+}
+
+function formatId(id) {
+  return String(id).padStart(6, '0');
 }
 
 // 3.5) Gera uma data de cadastro atual formatada (DD/MM/YYYY)
@@ -113,7 +118,7 @@ function renderUserList(users, titulo = 'Usuários') {
   users.forEach(u => {
     html += `
       <tr>
-        <td>${u.id}</td>
+        <td>${u.idFormatado}</td>
         <td>${escapeHtml(u.dataCadastro)}</td>
         <td>${escapeHtml(u.name)}</td>
         <td>${escapeHtml(u.cpf)}</td>
@@ -211,8 +216,12 @@ form.addEventListener('submit', async (event) => {
 
     const data = await response.json();
     // Como a API não persiste, garantimos um ID local nosso
+    const newId = generateLocalId();
+
     const createdUser = {
-      id: data.id ?? generateLocalId(),
+      id: newId,
+      idFormatado: formatId(newId),
+      dataCadastro: getCurrentDateTime(),
       ...newUser
     };
 
