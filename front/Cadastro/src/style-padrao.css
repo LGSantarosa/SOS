@@ -1,0 +1,118 @@
+main {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding: 32px 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  flex: 1;
+}
+
+body {
+  background: #f8f4f3;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+header {
+  background: #fff;
+  color: #ce3e05;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  align-items: center;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+#logo {
+  height: 5em;
+  width: auto;
+  }
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  justify-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 5px; 
+  flex-wrap: wrap; /* quebra linha no celular */
+}
+
+form, section {
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  gap: 10px;
+  width: 500px;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #7B1316;
+  font-size: 1.2rem;
+}
+
+button {
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  background-color: #7B1316;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+}
+
+button:hover {
+  background-color: #fad7cf;
+  color: #661d00;
+}
+
+
+
+
+input, select {
+  width: 95%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+
+@media (max-width: 600px) {
+  /* Só muda o que for NECESSÁRIO para caber na tela pequena */
+  
+  header h1 {
+    /* Reduzir o tamanho da fonte para evitar o corte (Causa do problema anterior) */
+    font-size: 1.2rem; 
+    padding: 10px 5px;
+    width: 90%;
+    text-align: center;
+  }
+}
